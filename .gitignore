@@ -62,6 +62,20 @@ DerivedData/
 
 # CocoaPods
 Pods/
+Podfile.lock
+*.xcworkspace
+!*.xcworkspace/contents.xcworkspacedata
+
+# Xcode构建产物
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.app.dSYM
+*.app
+build/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
 
 # 临时文件
 *.tmp
@@ -72,7 +86,16 @@ Pods/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.log
 
 # 环境配置
 .env
 .env.local
+
+# 其他
+*.hmap
+*.ipa
+*.app.zip
+*.app.dSYM.zip
+*.dSYM.zip
+*.dSYM
