@@ -15,7 +15,42 @@ export async function onload(resetGameTimeout) {
 
 	ui.updated();
 	game.documentZoom = game.deviceZoom;
-	if (game.documentZoom !== 1) ui.updatez();
+	
+	// 应用ui_zoom配置
+	var zoom;
+	switch (lib.config.ui_zoom) {
+		case "esmall":
+			zoom = 0.8;
+			break;
+		case "vsmall":
+			zoom = 0.9;
+			break;
+		case "small":
+			zoom = 0.93;
+			break;
+		case "big":
+			zoom = 1.05;
+			break;
+		case "vbig":
+			zoom = 1.1;
+			break;
+		case "ebig":
+			zoom = 1.2;
+			break;
+		case "eebig":
+			zoom = 1.5;
+			break;
+		case "eeebig":
+			zoom = 1.8;
+			break;
+		case "eeeebig":
+			zoom = 2;
+			break;
+		default:
+			zoom = 1;
+	}
+	game.documentZoom = game.deviceZoom * zoom;
+	if (game.documentZoom !== game.deviceZoom) ui.updatez();
 
 	await createBackground();
 
